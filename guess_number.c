@@ -7,7 +7,7 @@ int main()
 	srand(time(0));
 	int a = rand();
 	int number = rand() % 100 + 1;
-	int count;
+	int count = 0;
 	
 	printf("我已经想好了一个1到100间的数，请你猜猜这个数\n");
 	do{
@@ -20,6 +20,11 @@ int main()
 		}
 	}while( a != number);
 	printf("牛逼，你猜对了\n");
-	
+	if( count > 3 ){
+		printf("你猜了%d次才猜对，人机", count);
+	}
+	if( count  <= 3 ){
+		printf("牛逼，%d次就猜对了，比某些人强", count);
+	}
 	return 0;
 }
